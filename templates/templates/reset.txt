@@ -1,0 +1,6 @@
+Hi,
+
+You requested a password reset for Klynd.
+
+Click here to reset it or alternatively, copy the link into your browser:
+{{{link}}}

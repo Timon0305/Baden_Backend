@@ -1,0 +1,7 @@
+Hey!
+
+Welcome back!
+
+We are happy for you to join us again, {{firstName}} {{lastName}}!
+
+https://www.klynd.com

@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+.idea/
+.DS_Store
+
+# env
+# config/config.env
+# templates/config.env
+# scripts/after_install.sh

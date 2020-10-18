@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Responsive Email Template</title>
+<!--
+
+    An email present from your friends at Litmus (@litmusapp)
+
+    Email is surprisingly hard. While this has been thoroughly tested, your mileage may vary.
+    It's highly recommended that you test using a service like Litmus (http://litmus.com) and your own devices.
+
+    Enjoy!
+
+ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<style type="text/css">
+    /* CLIENT-SPECIFIC STYLES */
+    body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* RESET STYLES */
+    img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
+    table{border-collapse: collapse !important;}
+    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 525px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        .wrapper {
+          width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        .logo img {
+          margin: 0 auto !important;
+        }
+
+        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+        .mobile-hide {
+          display: none !important;
+        }
+
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        .responsive-table {
+          width: 100% !important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        .padding {
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        .padding-copy {
+             padding: 10px 5% 10px 5% !important;
+          text-align: center;
+        }
+
+        .no-padding {
+          padding: 0 !important;
+        }
+
+        .section-padding {
+          padding: 50px 15px 50px 15px !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        .mobile-button-container {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+
+        .mobile-button {
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            display: block !important;
+        }
+
+    }
+
+    div[style*="margin: 16px 0;"] { margin: 0 !important; }
+</style>
+</head>
+<body style="margin: 0 !important; padding: 0 !important;">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 510px;" class="responsive-table">
+                <tr>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <!-- COPY -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tr>
+                                           <td align="left" style="padding: 30px 0 0 0;">
+                                              <div style="width:70px"> 
+                                               <svg _ngcontent-c4="" viewBox="0 0 191 129" xmlns="http://www.w3.org/2000/svg"><title _ngcontent-c4="">Slishister</title><g _ngcontent-c4="" style="isolation:isolate"><g _ngcontent-c4="" data-name="Slishister" id="Slishister"><path _ngcontent-c4="" d="M38.1,115.37,4.71,38.12A15.6,15.6,0,0,1,19,16.33H85.81a15.61,15.61,0,0,1,14.33,21.79L66.75,115.37A15.61,15.61,0,0,1,38.1,115.37Z" style="fill:#fc205d"></path><path _ngcontent-c4="" d="M120.67,14.41,87.28,91.66a15.6,15.6,0,0,0,14.32,21.79h66.78A15.6,15.6,0,0,0,182.7,91.66L149.31,14.41A15.6,15.6,0,0,0,120.67,14.41Z" style="fill:#2043fc;mix-blend-mode:multiply"></path></g></g></svg>
+                                                                                             </div>
+
+                                           </td>
+                                       </tr>
+                                        <tr>
+   
+                                            <td align="left" style="padding: 30px 0 0 0; font-size: 26px; line-height: 37px; font-family: Helvetica, Arial, sans-serif; color: #222; font-weight:bold" class="padding-copy">
+                                            Confirm your email address on {{appName}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+                                                Welcome to {{appName}} {{firstName}}! Before we get started, we need to verify that <a style="color:#2043fc">{{email}}</a> is your email address.
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td  align="left"  style="padding: 20px 0 0 0;">
+<a href="{{{link}}}" style="min-width:196px;border-top:13px solid;border-bottom:13px solid;border-right:24px solid;border-left:24px solid;border-color:#FC205D;border-radius:4px;background-color:#FC205D;color:#ffffff;font-size:16px;line-height:18px;word-break:break-word;display:inline-block;text-align:center;font-weight:900;text-decoration:none!important; font-family: Helvetica, Arial, sans-serif;" target="_blank">
+					Confirm Email Address
+				</a>                                                
+                                                
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                               <td align="left" style="padding: 40px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Can't click on button above? Copy the link and past it into your browser</td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td align="left" style="padding: 10px 0 0; font-size: 14px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+                        
+                                                {{{link}}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 30px 0px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 510px;" class="responsive-table">
+                <tr>
+                    <td align="left" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
+                        <a href="#" target="_blank" style="color: #666666; text-decoration: none;">Klynd.com</a>
+                        <span style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <a href="#" target="_blank" style="color: #666666; text-decoration: none;">Help &amp; Support</a>
+                        <span style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <a href="#" target="_blank" style="color: #666666; text-decoration: none;">How it works?</a>
+                        <span style="font-family: Arial, sans-serif; font-size: 12px; color: #444444;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <a href="#" target="_blank" style="color: #666666; text-decoration: none;">Terms of use</a>   
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

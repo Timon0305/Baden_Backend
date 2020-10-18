@@ -1,0 +1,5 @@
+Hello, 
+
+We're happy that you have joined us, {{firstName}} {{lastName}}. now you are ready to create new projects to get a visual feedback. 
+
+To begin, head to https://www.klynd.com 

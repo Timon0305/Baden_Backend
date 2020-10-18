@@ -1,0 +1,6 @@
+Hey, {{firstName}},
+
+We're sad to see you go. Your account has been soft-deleted, and will be permanently deleted should you not log in within a month.
+
+Best Regards,
+Klynd

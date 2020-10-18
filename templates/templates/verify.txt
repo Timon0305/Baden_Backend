@@ -1,0 +1,4 @@
+Hi,
+
+Welcome to Klynd!
+your verification code is {{code}}

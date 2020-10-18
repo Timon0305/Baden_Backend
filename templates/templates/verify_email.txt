@@ -1,0 +1,6 @@
+Hi,
+
+You are being asked to confirm the e-mail address {{email}} with {{appName}}
+
+Click here to confirm it:
+{{{link}}}

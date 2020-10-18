@@ -1,0 +1,1 @@
+{{firstName}} {{lastName}} has {{activity}} on {{projectName}} project.\n\nIf you think you got this email by accident you can safely ignore it.\n\nhttps://www.klynd.com

@@ -1,0 +1,132 @@
+image: node:10.15.3
+options:
+  max-time: 10
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          max-time: 20
+          caches:
+            - node
+          script:
+            - apt-get update
+            - apt-get install -y zip
+            - zip -r application.zip .
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'upload'
+                ZIP_FILE: 'application.zip'
+                VERSION_LABEL: 'klynd-dev-2.0.0'
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP_DEV
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'deploy'
+                WAIT: 'true'
+                VERSION_LABEL: 'klynd-dev-2.0.0'
+                IGNORE_APPLICATION_STOP_FAILURES: 'false'
+                FILE_EXISTS_BEHAVIOR: 'OVERWRITE'
+    qa:
+      - step:
+          caches:
+            - node
+          script:
+            - apt-get update
+            - apt-get install -y zip
+            - zip -r application.zip .
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'upload'
+                ZIP_FILE: 'application.zip'
+                VERSION_LABEL: 'klynd-qa-1.0.0'
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP_QA
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'deploy'
+                WAIT: 'true'
+                VERSION_LABEL: 'klynd-qa-1.0.0'
+                IGNORE_APPLICATION_STOP_FAILURES: 'false'
+                FILE_EXISTS_BEHAVIOR: 'OVERWRITE'
+    staging:
+      - step:
+          caches:
+            - node
+          script:
+            - apt-get update
+            - apt-get install -y zip
+            - zip -r application.zip .
+            - pipe: atlassian/aws-code-deploy:0.2.5
+
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'upload'
+                ZIP_FILE: 'application.zip'
+                VERSION_LABEL: 'klynd-staging-1.0.0'
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP_STAGING
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'deploy'
+                WAIT: 'true'
+                VERSION_LABEL: 'klynd-staging-1.0.0'
+                IGNORE_APPLICATION_STOP_FAILURES: 'true'
+                FILE_EXISTS_BEHAVIOR: 'OVERWRITE'
+    prod:
+      - step:
+          caches:
+            - node
+          script:
+            - apt-get update
+            - apt-get install -y zip
+            - zip -r application.zip .
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'upload'
+                ZIP_FILE: 'application.zip'
+                VERSION_LABEL: 'klynd-prod-1.0.0'
+            - pipe: atlassian/aws-code-deploy:0.2.5
+              variables:
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                APPLICATION_NAME: $APPLICATION_NAME
+                DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP_PROD
+                S3_BUCKET: $S3_BUCKET
+                COMMAND: 'deploy'
+                WAIT: 'true'
+                VERSION_LABEL: 'klynd-prod-1.0.0'
+                IGNORE_APPLICATION_STOP_FAILURES: 'true'
+                FILE_EXISTS_BEHAVIOR: 'OVERWRITE'

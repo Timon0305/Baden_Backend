@@ -1,0 +1,989 @@
+[{
+  "id": "CGQVTAQZRJ",
+  "name": "Pitcairn",
+  "code": "870"
+},{
+  "id": "ALUZZOOGMA",
+  "name": "Sweden",
+  "code": "46"
+},{
+  "id": "AKAINWMYSQ",
+  "name": "Isle of Man",
+  "code": "44"
+},{
+  "id": "CKGQOTNMZM",
+  "name": "Barbados",
+  "code": "1-246"
+},{
+  "id": "FANXGMJQSC",
+  "name": "United Arab Emirates",
+  "code": "971"
+},{
+  "id": "FOHDFIRJCU",
+  "name": "Peru",
+  "code": "51"
+},{
+  "id": "ALKUCGNUGC",
+  "name": "Spain",
+  "code": "34"
+},{
+  "id": "FTUCUHFSEM",
+  "name": "Ghana",
+  "code": "233"
+},{
+  "id": "BXLVGPGRKP",
+  "name": "Niger",
+  "code": "227"
+},{
+  "id": "BUZMHJYQTM",
+  "name": "Uruguay",
+  "code": "598"
+},{
+  "id": "CMPOOZSYZC",
+  "name": "Democratic Republic of the Congo",
+  "code": "243"
+},{
+  "id": "DNUBBYEXVY",
+  "name": "Indonesia",
+  "code": "62"
+},{
+  "id": "DWYPXDDVJQ",
+  "name": "Wallis and Futuna",
+  "code": "681"
+},{
+  "id": "FRXXDJPBKU",
+  "name": "Slovakia",
+  "code": "421"
+},{
+  "id": "FSVEFSDSZK",
+  "name": "Cook Islands",
+  "code": "682"
+},{
+  "id": "CKHTPUTQOJ",
+  "name": "Saint Helena",
+  "code": "290"
+},{
+  "id": "CODLRILNOV",
+  "name": "Congo",
+  "code": "242"
+},{
+  "id": "CXUYCIBPIR",
+  "name": "Korea, Republic of",
+  "code": "82"
+},{
+  "id": "ENGNFNEIQZ",
+  "name": "Niue",
+  "code": "683"
+},{
+  "id": "FUKSATAPWK",
+  "name": "Bermuda",
+  "code": "1-441"
+},{
+  "id": "ALRPWGEGBF",
+  "name": "Saint Pierre and Miquelon",
+  "code": "508"
+},{
+  "id": "CMKZHPCLLH",
+  "name": "Austria",
+  "code": "43"
+},{
+  "id": "FLWZTTQEFR",
+  "name": "Sierra Leone",
+  "code": "232"
+},{
+  "id": "CZPYNGLXHI",
+  "name": "Lesotho",
+  "code": "266"
+},{
+  "id": "DHGXYTHFUU",
+  "name": "Cape Verde",
+  "code": "238"
+},{
+  "id": "EDOZJTLOWC",
+  "name": "Madagascar",
+  "code": "261"
+},{
+  "id": "EURPLXKZQQ",
+  "name": "Honduras",
+  "code": "504"
+},{
+  "id": "FTSEJBZNXK",
+  "name": "US Virgin Islands",
+  "code": "1-340"
+},{
+  "id": "AQNNBNAXTH",
+  "name": "Macao",
+  "code": "853"
+},{
+  "id": "DOHMEYTJUD",
+  "name": "Guinea",
+  "code": "224"
+},{
+  "id": "BNDJBHSWOF",
+  "name": "Curacao",
+  "code": "599"
+},{
+  "id": "CNVLVIAMBG",
+  "name": "United States Minor Outlying Islands",
+  "code": "1"
+},{
+  "id": "CGXBJNVYDL",
+  "name": "Nepal",
+  "code": "977"
+},{
+  "id": "CYPJFCISQW",
+  "name": "Liberia",
+  "code": "231"
+},{
+  "id": "EBUNNWPWGD",
+  "name": "Papua New Guinea",
+  "code": "675"
+},{
+  "id": "FPXNKVYDMP",
+  "name": "Liechtenstein",
+  "code": "423"
+},{
+  "id": "ASUNQLSKCL",
+  "name": "Rwanda",
+  "code": "250"
+},{
+  "id": "BUDCIPFIVX",
+  "name": "Belize",
+  "code": "501"
+},{
+  "id": "DWDIFBVJUC",
+  "name": "Gabon",
+  "code": "241"
+},{
+  "id": "CMHVHKGBXQ",
+  "name": "Swaziland",
+  "code": "268"
+},{
+  "id": "AYSOIOKTCA",
+  "name": "Greenland",
+  "code": "299"
+},{
+  "id": "DVPVWJMZHN",
+  "name": "Nicaragua",
+  "code": "505"
+},{
+  "id": "DYUHBFLABH",
+  "name": "Turkey",
+  "code": "90"
+},{
+  "id": "EHHSMDFBPH",
+  "name": "Colombia",
+  "code": "57"
+},{
+  "id": "ERGMKEDXPB",
+  "name": "Syrian Arab Republic",
+  "code": "963"
+},{
+  "id": "BFEUPBMTEB",
+  "name": "Sao Tome and Principe",
+  "code": "239"
+},{
+  "id": "CMKJQKWMKZ",
+  "name": "Saint Martin (French part)",
+  "code": "590"
+},{
+  "id": "EBGYXWQNMR",
+  "name": "Netherlands",
+  "code": "31"
+},{
+  "id": "EIUDJGQLOU",
+  "name": "Jersey",
+  "code": "44"
+},{
+  "id": "EQBEAUCPDP",
+  "name": "Qatar",
+  "code": "974"
+},{
+  "id": "FKTKDYRISZ",
+  "name": "Mali",
+  "code": "223"
+},{
+  "id": "AYEMZBIJGY",
+  "name": "Iraq",
+  "code": "964"
+},{
+  "id": "DBRQUADWOB",
+  "name": "Guam",
+  "code": "1-671"
+},{
+  "id": "DCYWXSDLBD",
+  "name": "Myanmar",
+  "code": "95"
+},{
+  "id": "ELVMQVEQFH",
+  "name": "Svalbard and Jan Mayen",
+  "code": "47"
+},{
+  "id": "EYVOQWSNRH",
+  "name": "Tokelau",
+  "code": "690"
+},{
+  "id": "AMIPNGLKVJ",
+  "name": "Cyprus",
+  "code": "357"
+},{
+  "id": "BSIBYSHEUI",
+  "name": "Venezuela",
+  "code": "58"
+},{
+  "id": "CTWQQJOCOC",
+  "name": "South Africa",
+  "code": "27"
+},{
+  "id": "CQRXDXJYRC",
+  "name": "Afghanistan",
+  "code": "93"
+},{
+  "id": "AWFPGNFYVG",
+  "name": "Trinidad and Tobago",
+  "code": "1-868"
+},{
+  "id": "CKJIGBMPFK",
+  "name": "Western Sahara",
+  "code": "212"
+},{
+  "id": "CSARKGQPAA",
+  "name": "Montenegro",
+  "code": "382"
+},{
+  "id": "DLYUZTMNVQ",
+  "name": "Somalia",
+  "code": "252"
+},{
+  "id": "IRTLFUMWDO",
+  "name": "Malta",
+  "code": "356"
+},{
+  "id": "HOPBEOSOGS",
+  "name": "Mozambique",
+  "code": "258"
+},{
+  "id": "IHYAPLCTNT",
+  "name": "Martinique",
+  "code": "596"
+},{
+  "id": "ILVDCGJTLR",
+  "name": "Sudan",
+  "code": "249"
+},{
+  "id": "KOSYQAIVWZ",
+  "name": "Gibraltar",
+  "code": "350"
+},{
+  "id": "LOUHBTVKIL",
+  "name": "Bahamas",
+  "code": "1-242"
+},{
+  "id": "LPLJSYQSWP",
+  "name": "Dominica",
+  "code": "1-767"
+},{
+  "id": "QDFOFIOTAN",
+  "name": "Micronesia, Federated States of",
+  "code": "691"
+},{
+  "id": "SZQVKFWDNQ",
+  "name": "Hungary",
+  "code": "36"
+},{
+  "id": "WYYMGNONNW",
+  "name": "Viet Nam",
+  "code": "84"
+},{
+  "id": "ZFRIALPKCM",
+  "name": "United Republic of Tanzania",
+  "code": "255"
+},{
+  "id": "IXJDOTNKFS",
+  "name": "Libya",
+  "code": "218"
+},{
+  "id": "JGLZCYBRGB",
+  "name": "Bouvet Island",
+  "code": "47"
+},{
+  "id": "LEIVTDEZTI",
+  "name": "Suriname",
+  "code": "597"
+},{
+  "id": "NOEPEQBIYE",
+  "name": "Bhutan",
+  "code": "975"
+},{
+  "id": "OOIOUMYPOG",
+  "name": "Uganda",
+  "code": "256"
+},{
+  "id": "PDULMXONHR",
+  "name": "United Kingdom",
+  "code": "44"
+},{
+  "id": "STWBCQXRHO",
+  "name": "Jordan",
+  "code": "962"
+},{
+  "id": "UKANEIZINP",
+  "name": "Ecuador",
+  "code": "593"
+},{
+  "id": "XLYFZYXQBO",
+  "name": "Montserrat",
+  "code": "1-664"
+},{
+  "id": "YCRWMQBQKL",
+  "name": "Uzbekistan",
+  "code": "998"
+},{
+  "id": "ZPHUPIPCKU",
+  "name": "Northern Mariana Islands",
+  "code": "1-670"
+},{
+  "id": "GQPKPYBOOA",
+  "name": "Norway",
+  "code": "47"
+},{
+  "id": "HXGLJLIYFV",
+  "name": "Zimbabwe",
+  "code": "263"
+},{
+  "id": "HATWCQOVAO",
+  "name": "Georgia",
+  "code": "995"
+},{
+  "id": "IFPKSBIGFK",
+  "name": "Guernsey",
+  "code": "44"
+},{
+  "id": "MIEESPGURK",
+  "name": "Luxembourg",
+  "code": "352"
+},{
+  "id": "NPYJESAKJV",
+  "name": "Cambodia",
+  "code": "855"
+},{
+  "id": "QIZEPXCNUJ",
+  "name": "China",
+  "code": "86"
+},{
+  "id": "RNBIEYBCCZ",
+  "name": "Mongolia",
+  "code": "976"
+},{
+  "id": "SLBTLGTAEG",
+  "name": "Poland",
+  "code": "48"
+},{
+  "id": "WKWWLTABCT",
+  "name": "Australia",
+  "code": "61"
+},{
+  "id": "XTFBPUWGZH",
+  "name": "Mayotte",
+  "code": "262"
+},{
+  "id": "YGVLXOXTZE",
+  "name": "Malaysia",
+  "code": "60"
+},{
+  "id": "IVQMUAMWJH",
+  "name": "Azerbaijan",
+  "code": "994"
+},{
+  "id": "LBPDTZFHSZ",
+  "name": "Morocco",
+  "code": "212"
+},{
+  "id": "MQIRXGECGG",
+  "name": "Mexico",
+  "code": "52"
+},{
+  "id": "MWILKCKAGP",
+  "name": "Guyana",
+  "code": "592"
+},{
+  "id": "QDAZJVWEML",
+  "name": "Costa Rica",
+  "code": "506"
+},{
+  "id": "RTTMWFTVOE",
+  "name": "Faroe Islands",
+  "code": "298"
+},{
+  "id": "UJFZWIRQUN",
+  "name": "Latvia",
+  "code": "371"
+},{
+  "id": "UPSHGCSMBS",
+  "name": "Falkland Islands (Malvinas)",
+  "code": "500"
+},{
+  "id": "XKPEARVEPF",
+  "name": "French Polynesia",
+  "code": "689"
+},{
+  "id": "HYUFDRUNBQ",
+  "name": "Monaco",
+  "code": "377"
+},{
+  "id": "HVTWBNYHZJ",
+  "name": "Saint Barthelemy",
+  "code": "590"
+},{
+  "id": "JFTOTMMVYG",
+  "name": "Belarus",
+  "code": "375"
+},{
+  "id": "KCNCVIXRHY",
+  "name": "India",
+  "code": "91"
+},{
+  "id": "NNPSBVICPE",
+  "name": "San Marino",
+  "code": "378"
+},{
+  "id": "OBFOHCNZUD",
+  "name": "Denmark",
+  "code": "45"
+},{
+  "id": "QBPYLKCABH",
+  "name": "Nauru",
+  "code": "674"
+},{
+  "id": "TTLQVJLGDS",
+  "name": "Maldives",
+  "code": "960"
+},{
+  "id": "HZWUVVNIHN",
+  "name": "Lebanon",
+  "code": "961"
+},{
+  "id": "UHPPYIXMNA",
+  "name": "Macedonia, the Former Yugoslav Republic of",
+  "code": "389"
+},{
+  "id": "JUKRGNVDSG",
+  "name": "Eritrea",
+  "code": "291"
+},{
+  "id": "JZKHZXHMBG",
+  "name": "American Samoa",
+  "code": "1-684"
+},{
+  "id": "KPBMAYPQNZ",
+  "name": "Greece",
+  "code": "30"
+},{
+  "id": "KTKJFYCPNC",
+  "name": "Armenia",
+  "code": "374"
+},{
+  "id": "NDEUPLCYHQ",
+  "name": "Cuba",
+  "code": "53"
+},{
+  "id": "PIYPYQUGYG",
+  "name": "Saudi Arabia",
+  "code": "966"
+},{
+  "id": "VYYGBEGNYX",
+  "name": "Haiti",
+  "code": "509"
+},{
+  "id": "YKMMLHDQXG",
+  "name": "Malawi",
+  "code": "265"
+},{
+  "id": "YTAUFQAMDO",
+  "name": "Argentina",
+  "code": "54"
+},{
+  "id": "ZBUSJLMALO",
+  "name": "Togo",
+  "code": "228"
+},{
+  "id": "ZIFITYPPWD",
+  "name": "Mauritius",
+  "code": "230"
+},{
+  "id": "GXSNUVEXRM",
+  "name": "Bangladesh",
+  "code": "880"
+},{
+  "id": "GETYVNMYQC",
+  "name": "Finland",
+  "code": "358"
+},{
+  "id": "IAIOSTUEVO",
+  "name": "Timor-Leste",
+  "code": "670"
+},{
+  "id": "QSWAOENQVU",
+  "name": "Brazil",
+  "code": "55"
+},{
+  "id": "QXPFZITXVV",
+  "name": "Grenada",
+  "code": "1-473"
+},{
+  "id": "UCTXJFTMUA",
+  "name": "Aruba",
+  "code": "297"
+},{
+  "id": "UNZQGLAFUH",
+  "name": "Paraguay",
+  "code": "595"
+},{
+  "id": "VQLPNGZEWL",
+  "name": "Cayman Islands",
+  "code": "1-345"
+},{
+  "id": "WBKHRQVHFK",
+  "name": "French Guiana",
+  "code": "594"
+},{
+  "id": "WYQDGRULYQ",
+  "name": "Angola",
+  "code": "244"
+},{
+  "id": "GLYLHEHBSY",
+  "name": "Oman",
+  "code": "968"
+},{
+  "id": "GRHPJVVMDU",
+  "name": "Kiribati",
+  "code": "686"
+},{
+  "id": "HEIBDBRKSW",
+  "name": "Jamaica",
+  "code": "1-876"
+},{
+  "id": "INWXVWDHMQ",
+  "name": "Dominican Republic",
+  "code": "1-809,1-829,1-849"
+},{
+  "id": "LWEPRQGDKN",
+  "name": "Iran, Islamic Republic of",
+  "code": "98"
+},{
+  "id": "NUGVDBWTXB",
+  "name": "Anguilla",
+  "code": "1-264"
+},{
+  "id": "SJYCKEJPOM",
+  "name": "Canada",
+  "code": "1"
+},{
+  "id": "VXKATMMDVN",
+  "name": "Singapore",
+  "code": "65"
+},{
+  "id": "YTWLYUHBVN",
+  "name": "El Salvador",
+  "code": "503"
+},{
+  "id": "GBAEIEOVWL",
+  "name": "Chad",
+  "code": "235"
+},{
+  "id": "JPZAGIQHPK",
+  "name": "France",
+  "code": "33"
+},{
+  "id": "JLSDEUZHZY",
+  "name": "Andorra",
+  "code": "376"
+},{
+  "id": "JZNWQNKCPB",
+  "name": "British Virgin Islands",
+  "code": "1-284"
+},{
+  "id": "LHALADFQVL",
+  "name": "Tonga",
+  "code": "676"
+},{
+  "id": "PNMJEHMPFC",
+  "name": "Turkmenistan",
+  "code": "993"
+},{
+  "id": "RHFWJROPUZ",
+  "name": "Fiji",
+  "code": "679"
+},{
+  "id": "RYYXLHDBNP",
+  "name": "Antarctica",
+  "code": "672"
+},{
+  "id": "SMSLGURUWW",
+  "name": "Algeria",
+  "code": "213"
+},{
+  "id": "SNGHCCANLM",
+  "name": "Brunei Darussalam",
+  "code": "673"
+},{
+  "id": "VUAEVYVNEP",
+  "name": "Burundi",
+  "code": "257"
+},{
+  "id": "WUWRIFQLZZ",
+  "name": "Guinea-Bissau",
+  "code": "245"
+},{
+  "id": "YMCHRCSLQI",
+  "name": "Kyrgyzstan",
+  "code": "996"
+},{
+  "id": "LBRKTYEZCC",
+  "name": "Djibouti",
+  "code": "253"
+},{
+  "id": "LMCQNKCCJS",
+  "name": "Slovenia",
+  "code": "386"
+},{
+  "id": "MNPOJSRHIT",
+  "name": "British Indian Ocean Territory",
+  "code": "246"
+},{
+  "id": "NPAILPTNIP",
+  "name": "Ethiopia",
+  "code": "251"
+},{
+  "id": "PDJNCUTPRB",
+  "name": "Serbia",
+  "code": "381"
+},{
+  "id": "RSCDFHNYKM",
+  "name": "Italy",
+  "code": "39"
+},{
+  "id": "UASGSOIJNA",
+  "name": "Kuwait",
+  "code": "965"
+},{
+  "id": "VDGLLLSXLZ",
+  "name": "Bahrain",
+  "code": "973"
+},{
+  "id": "WMDRMDGJQB",
+  "name": "Egypt",
+  "code": "20"
+},{
+  "id": "WPKCSMXJAU",
+  "name": "Germany",
+  "code": "49"
+},{
+  "id": "IFGUUQBWWX",
+  "name": "Sint Maarten (Dutch part)",
+  "code": "1-721"
+},{
+  "id": "HULHHJFCKW",
+  "name": "Lao People's Democratic Republic",
+  "code": "856"
+},{
+  "id": "JQIBGMNJIN",
+  "name": "Guatemala",
+  "code": "502"
+},{
+  "id": "KCAYJJKFQG",
+  "name": "Portugal",
+  "code": "351"
+},{
+  "id": "KSQHRHSJVA",
+  "name": "Cote d'Ivoire",
+  "code": "225"
+},{
+  "id": "MLYIOMOLBW",
+  "name": "Belgium",
+  "code": "32"
+},{
+  "id": "ORIGMSRKIE",
+  "name": "Lithuania",
+  "code": "370"
+},{
+  "id": "QSUPGNZEIY",
+  "name": "New Caledonia",
+  "code": "687"
+},{
+  "id": "RAFSPVRTOX",
+  "name": "Guadeloupe",
+  "code": "590"
+},{
+  "id": "SFVMLVVLZO",
+  "name": "Yemen",
+  "code": "967"
+},{
+  "id": "UUNQGLNCVH",
+  "name": "Kenya",
+  "code": "254"
+},{
+  "id": "VGTQCKZKDS",
+  "name": "South Georgia and the South Sandwich Islands",
+  "code": "500"
+},{
+  "id": "VXCVMLGIZK",
+  "name": "Nigeria",
+  "code": "234"
+},{
+  "id": "WLRENLHBQQ",
+  "name": "Holy See (Vatican City State)",
+  "code": "379"
+},{
+  "id": "ZOFMBPQUQZ",
+  "name": "Estonia",
+  "code": "372"
+},{
+  "id": "IHOFRYETKD",
+  "name": "Bonaire",
+  "code": "599"
+},{
+  "id": "IJRFJUGTBJ",
+  "name": "Vanuatu",
+  "code": "678"
+},{
+  "id": "IYDSAFEXDG",
+  "name": "Bolivia",
+  "code": "591"
+},{
+  "id": "JMCENCPFGZ",
+  "name": "Switzerland",
+  "code": "41"
+},{
+  "id": "JQPVMVKJMI",
+  "name": "Croatia",
+  "code": "385"
+},{
+  "id": "LQLNKSGUHP",
+  "name": "Heard Island and McDonald Islands",
+  "code": "672"
+},{
+  "id": "NJDLTIWTXN",
+  "name": "Comoros",
+  "code": "269"
+},{
+  "id": "NLTWKVLXEI",
+  "name": "Albania",
+  "code": "355"
+},{
+  "id": "NPVMDKYHWS",
+  "name": "Iceland",
+  "code": "354"
+},{
+  "id": "PXTEKWOZQC",
+  "name": "Turks and Caicos Islands",
+  "code": "1-649"
+},{
+  "id": "RKFNUKIICD",
+  "name": "Panama",
+  "code": "507"
+},{
+  "id": "WDMOPSXRVU",
+  "name": "Botswana",
+  "code": "267"
+},{
+  "id": "WWEDQTZFVJ",
+  "name": "Ukraine",
+  "code": "380"
+},{
+  "id": "YQZJDICYZI",
+  "name": "United States",
+  "code": "1"
+},{
+  "id": "IWLYJLLPSA",
+  "name": "Benin",
+  "code": "229"
+},{
+  "id": "FVMGQSEQNQ",
+  "name": "Chile",
+  "code": "56"
+},{
+  "id": "NCTTZOFPLO",
+  "name": "Zambia",
+  "code": "260"
+},{
+  "id": "NORFXMKUWS",
+  "name": "Puerto Rico",
+  "code": "1"
+},{
+  "id": "VYMLKQJRVS",
+  "name": "Marshall Islands",
+  "code": "692"
+},{
+  "id": "GBSNOGPABV",
+  "name": "Palau",
+  "code": "680"
+},{
+  "id": "GHVRLTHMFI",
+  "name": "Seychelles",
+  "code": "248"
+},{
+  "id": "IBBXKNOYMM",
+  "name": "Tuvalu",
+  "code": "688"
+},{
+  "id": "IEROHLPXRP",
+  "name": "Samoa",
+  "code": "685"
+},{
+  "id": "JTJTWWEGSN",
+  "name": "Mauritania",
+  "code": "222"
+},{
+  "id": "KSADBCYVMW",
+  "name": "French Southern Territories",
+  "code": "262"
+},{
+  "id": "LEVYLKSXLQ",
+  "name": "Cameroon",
+  "code": "237"
+},{
+  "id": "MKOLCVVMEQ",
+  "name": "Namibia",
+  "code": "264"
+},{
+  "id": "MTDPEDQQDZ",
+  "name": "Pakistan",
+  "code": "92"
+},{
+  "id": "MUKTAWPYCW",
+  "name": "Philippines",
+  "code": "63"
+},{
+  "id": "NDFGNRYYBO",
+  "name": "Antigua and Barbuda",
+  "code": "1-268"
+},{
+  "id": "NMXQOHUWFH",
+  "name": "Kazakhstan",
+  "code": "7"
+},{
+  "id": "NYWJLYVBFJ",
+  "name": "Gambia",
+  "code": "220"
+},{
+  "id": "OVJJHLMVFB",
+  "name": "Senegal",
+  "code": "221"
+},{
+  "id": "PFIHTHADHQ",
+  "name": "Christmas Island",
+  "code": "61"
+},{
+  "id": "QYBXBGPXRF",
+  "name": "Central African Republic",
+  "code": "236"
+},{
+  "id": "RHCPFCKBOJ",
+  "name": "South Sudan",
+  "code": "211"
+},{
+  "id": "VKHSAFRWJT",
+  "name": "Bulgaria",
+  "code": "359"
+},{
+  "id": "WNGWCOOYQK",
+  "name": "Sri Lanka",
+  "code": "94"
+},{
+  "id": "HIYKCMRHNE",
+  "name": "New Zealand",
+  "code": "64"
+},{
+  "id": "IQLUBADVPU",
+  "name": "Tunisia",
+  "code": "216"
+},{
+  "id": "ITSGSIVGPY",
+  "name": "Hong Kong",
+  "code": "852"
+},{
+  "id": "NAYECQSUHJ",
+  "name": "Palestine, State of",
+  "code": "970"
+},{
+  "id": "PBUPERAXPG",
+  "name": "Equatorial Guinea",
+  "code": "240"
+},{
+  "id": "SAHCXWCDSR",
+  "name": "Cocos (Keeling) Islands",
+  "code": "61"
+},{
+  "id": "SVZDDMBMCA",
+  "name": "Thailand",
+  "code": "66"
+},{
+  "id": "THBKHNUDIR",
+  "name": "Czech Republic",
+  "code": "420"
+},{
+  "id": "UTCYGRCJQX",
+  "name": "Russian Federation",
+  "code": "7"
+},{
+  "id": "VITXYFNLJE",
+  "name": "Moldova, Republic of",
+  "code": "373"
+},{
+  "id": "YUUPEMEGJY",
+  "name": "Saint Lucia",
+  "code": "1-758"
+},{
+  "id": "ZGQJGZNKAK",
+  "name": "Norfolk Island",
+  "code": "672"
+},{
+  "id": "ZOQNPZTYVF",
+  "name": "Saint Vincent and the Grenadines",
+  "code": "1-784"
+},{
+  "id": "GJXKKTWSEM",
+  "name": "Taiwan",
+  "code": "886"
+},{
+  "id": "JFROATRSYZ",
+  "name": "Korea, Democratic People's Republic of",
+  "code": "850"
+},{
+  "id": "JUOFKYELQG",
+  "name": "Japan",
+  "code": "81"
+},{
+  "id": "NTELXTOZVX",
+  "name": "Ireland",
+  "code": "353"
+},{
+  "id": "SHBEHLGEKC",
+  "name": "Tajikistan",
+  "code": "992"
+},{
+  "id": "THPVQYTPLS",
+  "name": "Solomon Islands",
+  "code": "677"
+},{
+  "id": "TXWHUTKRTM",
+  "name": "Bosnia and Herzegovina",
+  "code": "387"
+},{
+  "id": "UBEPRPSPCB",
+  "name": "Reunion",
+  "code": "262"
+},{
+  "id": "WZFJGRPRIL",
+  "name": "Burkina Faso",
+  "code": "226"
+},{
+  "id": "YUOERAKXNP",
+  "name": "Saint Kitts and Nevis",
+  "code": "1-869"
+},{
+  "id": "ZBZHATFZRQ",
+  "name": "Romania",
+  "code": "40"
+}]
