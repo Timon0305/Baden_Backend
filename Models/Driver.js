@@ -53,19 +53,22 @@ const DriverSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Password is required'],
         select: false,
-        // match: /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,32})/
     },
     carUrl: {
         type: String,
         default: "/images/cars/default_car.png"
     },
+    carName: {
+        type: String,
+        default: 'Cement Mixer'
+    },
     licenseUrl: {
         type: String,
-        default: null
+        default: "/images/license/default_license.png"
     },
     insuranceUrl: {
         type: String,
-        default: null
+        default: "/images/insurance/default_insurance.png"
     },
     accountType: {
         type: String,

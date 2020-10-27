@@ -318,13 +318,15 @@ exports.getUserDetails = asyncHandler(async (req, res, next) => {
  */
 
 exports.updateUserDetails = asyncHandler(async (req, res, next) => {
-    console.log('Confirm')
     let {
+        carName,
         carUrl,
     } = req.body;
 
     try {
-        let updateData = {};
+        let updateData = {
+            carName
+        };
 
         if (carUrl && carUrl.uri) {
             try {
