@@ -49,8 +49,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  gender: {type: String, default: 'male', enum: ['male', 'female']},
-  bloodType: {type: String, default: 'O+'},
   password: {
     type: String,
     required: [true, 'Password is required'],
@@ -64,33 +62,13 @@ const UserSchema = new mongoose.Schema({
   accountType: {
     type: String,
     default: 'User',
-    enum: ['User', 'Doctor', 'Admin']
-  },
-  street: {
-    type: String,
-    default: ''
-  },
-  city: {
-    type: String,
-    default: ''
-  },
-  country: {
-    type: String,
-    default: ''
+    enum: ['User', 'Driver', 'Admin']
   },
   phoneNumber: String,
-  language: {
-    type: String,
-    default: 'english'
-  },
   status: {
     type: String,
     default: 'ACTIVE',
     enum: ['DELETED', 'ACTIVE']
-  },
-  hospital: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Hospital'
   },
   notificationCount: {
     type: Number,
@@ -185,10 +163,8 @@ UserSchema.methods.matchPassword = async function (inputPassword) {
 |------------------------------------------------------------*/
 
 UserSchema.methods.matchVerifyCode = async function (inputCode) {
-  if (inputCode != this.emailVerifyCode) {
-    return false;
-  }
-  return true;
+  return inputCode === this.emailVerifyCode;
+
 };
 
 /*-----------------------------------------------------------

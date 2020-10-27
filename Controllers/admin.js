@@ -87,6 +87,7 @@ exports.logout = asyncHandler(async (req, res, next) => {
 exports.getUsers = asyncHandler(async (req, res, next) => {
   try {
     const users = await UserSchema.find({accountType: 'User'});
+    console.log('getUsers', users)
 
     res.status(200).json({
       success: true,

@@ -80,6 +80,9 @@ const admin = require('./routes/admin');
 const util = require('./routes/util');
 const pill = require('./routes/pill');
 const userDoctor = require('./routes/userDoctor');
+const driverList = require('./routes/driverList');
+const driver = require('./routes/driver');
+
 
 const app = express();
 // JSON interpreter
@@ -108,12 +111,15 @@ app.use('/api/user', user);
 app.use('/api/util', util);
 app.use('/api/pill', pill);
 app.use('/api/userDoctor', userDoctor);
-// app.use('/api/notification', notification);
+app.use('/api/driver', driverList);
+
+// Driver
+app.use('/api2/user', driver);
 
 app.use(errorHandler);
 
 app.get('/', async (req, res, next) => {
-  res.status(200).send('Welcome to the Docitoo api');
+  res.status(200).send('Welcome to the BADEN api');
 });
 //
 const expressSwagger = require('express-swagger-generator')(app);
@@ -121,8 +127,8 @@ const expressSwagger = require('express-swagger-generator')(app);
 let options = {
   swaggerDefinition: {
     info: {
-      description: 'Docitoo API server',
-      title: 'Docitoo',
+      description: 'BADEN API server',
+      title: 'BADEN',
       version: '1.0.0',
     },
     host: 'localhost:3000',

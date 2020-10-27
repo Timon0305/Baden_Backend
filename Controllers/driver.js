@@ -28,7 +28,7 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
     const {email, fullName, phoneNumber, password, deviceUserId, deviceType} = req.body;
 
     try {
-        const registeredUser = await UserSchema.findOne({email});
+        const registeredUser = await DriverSchema.findOne({email});
         if (registeredUser) {
             return res.status(409).json({
                 success: false,
@@ -37,20 +37,21 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
             })
         }
 
-        const createdUser = await UserSchema.create({
+        const createdUser = await DriverSchema.create({
             email,
             fullName,
             phoneNumber,
             password,
         });
 
-        const sessionToken = createdUser.getSignedJwtToken(req);
-        const email_code = createdUser.generateVerificationCode();
+        const sessionToken = createdUser.getSignedJwtToken1(req);
+        const email_code = createdUser.generateVerificationCode1();
         await createdUser.save();
         //
         // console.log(email_code);
         //
-        const userDetails = await UserSchema.findOne({email});
+        const userDetails = await DriverSchema.findOne({email});
+        console.log('user detail', userDetails)
         // let email1 = await sendEmail(userDetails, 'welcome', {
         //   fullName: fullName
         // });
@@ -89,8 +90,8 @@ exports.logonUser = asyncHandler(async (req, res, next) => {
         return next(new ErrorResponse('Credentials Required', 401));
     }
 
-    const LoginUser = await UserSchema.findOne({email}).select('+password');
-    const userDetails = await UserSchema.findOne({email});
+    const LoginUser = await DriverSchema.findOne({email}).select('+password');
+    const userDetails = await DriverSchema.findOne({email});
 
     if (!LoginUser) {
         return res.status(404).json({
@@ -129,7 +130,7 @@ exports.logonUser = asyncHandler(async (req, res, next) => {
         });
     }
 
-    const LogonUserToken = LoginUser.getSignedJwtToken(req);
+    const LogonUserToken = LoginUser.getSignedJwtToken1(req);
     // sendTokenResponse(LoginUser, res);
 
     // register device token for push notification
@@ -178,7 +179,7 @@ exports.logoffUser = asyncHandler(async (req, res, next) => {
 exports.verifyEmail = asyncHandler(async (req, res, next) => {
     const {code} = req.body;
 
-    const fullUser = await UserSchema.findById(req.user._id).select(
+    const fullUser = await DriverSchema.findById(req.user._id).select(
         '+emailVerifyCode'
     );
 
@@ -218,7 +219,7 @@ exports.verifyEmail = asyncHandler(async (req, res, next) => {
 
 exports.resendVerificationEmail = asyncHandler(async (req, res, next) => {
     try {
-        const fullUser = await UserSchema.findById(req.user._id).select(
+        const fullUser = await DriverSchema.findById(req.user._id).select(
             '+emailVerifyCode'
         );
         await sendEmail(fullUser, 'verify', {
@@ -254,7 +255,7 @@ exports.changeAvatar = asyncHandler(async (req, res, next) => {
  * @return {object} 200 - {success: true}
  */
 exports.forgetPassword = asyncHandler(async (req, res, next) => {
-    const PwdUser = await UserSchema.findOne({email: req.body.email});
+    const PwdUser = await DriverSchema.findOne({email: req.body.email});
 
     if (!PwdUser) return next(new ErrorResponse('User Not Found'), 404);
 
@@ -293,7 +294,7 @@ exports.forgetPassword = asyncHandler(async (req, res, next) => {
  */
 exports.getUserDetails = asyncHandler(async (req, res, next) => {
     try {
-        let userDetails = await UserSchema.findById(req.user._id);
+        let userDetails = await DriverSchema.findById(req.user._id);
         res.status(200).json({
             success: true,
             userDetails
@@ -317,48 +318,28 @@ exports.getUserDetails = asyncHandler(async (req, res, next) => {
  */
 
 exports.updateUserDetails = asyncHandler(async (req, res, next) => {
+    console.log('Confirm')
     let {
-        fullName,
-        email,
-        phoneNumber,
-        password,
-        gender,
-        bloodType,
-        language,
-        avatarUrl,
-        // street,
-        // country,
-        // city,
-        // accountType
+        carUrl,
     } = req.body;
-    //console.log(req);
 
     try {
-        let updateData = {
-            fullName,
-            email,
-            phoneNumber,
-            // password,
-            gender,
-            bloodType,
-            language,
-        };
+        let updateData = {};
 
-        if (avatarUrl) {
+        if (carUrl && carUrl.uri) {
             try {
-                const fileName = await util.saveImageBase64(avatarUrl, Const.PATH_AVATAR, 'user_' + req.user.id);
+                const fileName = await util.saveImageBase64(carUrl.uri, Const.PATH_CAR, 'cars_' + req.user.id);
 
                 if (fileName) {
-                    updateData.avatarUrl = Const.URL_PREFIX_AVATAR + fileName;
+                    updateData.carUrl = Const.URL_PREFIX_CAR + fileName;
+                    updateData.carUrl = updateData.carUrl.split("public")[1].replace(/\\/g, '/');
                 }
                 // await oldUser.save();
             } catch (e) {
+                console.log('Exception', e.message);
             }
         }
-
-
-        console.log(req.body);
-        let userDetails = await UserSchema.findByIdAndUpdate(
+        let userDetails = await DriverSchema.findByIdAndUpdate(
             req.user.id,
             updateData,
             {
@@ -366,7 +347,7 @@ exports.updateUserDetails = asyncHandler(async (req, res, next) => {
                 runValidators: true
             }
         );
-        await userDetails.updatePassword(password);
+        // await userDetails.updatePassword(password);
         await userDetails.save();
 
         res.status(200).json({
@@ -408,7 +389,7 @@ exports.deleteUser = asyncHandler(async (req, res, next) => {
 exports.searchUsers = asyncHandler(async (req, res, next) => {
     const q = req.query.searchText;
 
-    let users = await UserSchema.find({
+    let users = await DriverSchema.find({
         $or: [
             {
                 email: {
@@ -454,7 +435,7 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
 
     //console.log(req.body);
 
-    const user = await UserSchema.findOne({
+    const user = await DriverSchema.findOne({
         resetPasswordToken,
         resetPasswordExpire: {
             $gt: Date.now()
@@ -491,7 +472,7 @@ exports.changePassword = asyncHandler(async (req, res, next) => {
         return next(new ErrorResponse('Invalid Credentials', 401));
     }
 
-    const userDetails = await UserSchema.findOne({_id: req.user.id}).select(
+    const userDetails = await DriverSchema.findOne({_id: req.user.id}).select(
         '+password'
     );
 

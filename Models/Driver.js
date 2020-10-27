@@ -57,15 +57,15 @@ const DriverSchema = new mongoose.Schema({
     },
     carUrl: {
         type: String,
-        default: "/images/avatar/default.png"
+        default: "/images/cars/default_car.png"
     },
     licenseUrl: {
         type: String,
-        default: "/images/avatar/default.png"
+        default: null
     },
     insuranceUrl: {
         type: String,
-        default: "/images/avatar/default.png"
+        default: null
     },
     accountType: {
         type: String,
@@ -119,7 +119,7 @@ DriverSchema.pre('save', async function (next) {
 |   Generate Email Code
 |------------------------------------------------------------*/
 
-DriverSchema.methods.generateVerificationCode = function () {
+DriverSchema.methods.generateVerificationCode1 = function () {
     this.emailVerifyCode = Math.floor((1 + Math.random()) * 100000).toString();
     return this.emailVerifyCode;
 };
@@ -149,7 +149,7 @@ DriverSchema.pre('save', async function (next) {
 |   Get JSON Web Token
 |------------------------------------------------------------*/
 
-DriverSchema.methods.getSignedJwtToken = function (req) {
+DriverSchema.methods.getSignedJwtToken1 = function (req) {
     let token = jwt.sign({id: this._id}, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRE
     });

@@ -23,10 +23,10 @@ const {
     searchUsers,
     deleteSession,
     getSessions,
-} = require('../Controllers/user');
+} = require('../Controllers/driver');
 
 
-const { registered } = require('../middleware/auth');
+const { registered } = require('../middleware/auth1');
 const { uploadS3 } = require('../utils/aws');
 
 //----------------------------------------------------------

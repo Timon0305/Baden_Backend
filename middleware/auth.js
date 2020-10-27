@@ -10,6 +10,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
   let token;
   // return next();
 
+  console.log('my token', req.headers.usertoken)
 
   if (req.headers.usertoken) {
     token = req.headers.usertoken;
@@ -26,7 +27,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
 
     const isValidated = await checkSession(req, token);
 
-    if (!isValidated == true) {
+    if (!isValidated === true) {
       return next(new ErrorResponse('Invalid Session', 401));
     }
 
@@ -37,6 +38,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
 
     next();
   } catch (err) {
+    console.log('err=>>>>>>>>>>>>>>>>>')
     return next(new ErrorResponse('401: Unauthorized', 401));
   }
 });

@@ -317,31 +317,25 @@ exports.getUserDetails = asyncHandler(async (req, res, next) => {
  */
 
 exports.updateUserDetails = asyncHandler(async (req, res, next) => {
+  console.log('find error', req.user)
   let {
     fullName,
     email,
     phoneNumber,
     password,
-    gender,
-    bloodType,
-    language,
     avatarUrl,
     // street,
     // country,
     // city,
-    // accountType
+    accountType
   } = req.body;
-  //console.log(req);
 
   try {
     let updateData = {
       fullName,
       email,
       phoneNumber,
-      // password,
-      gender,
-      bloodType,
-      language,
+      avatarUrl
     };
 
     if (avatarUrl) {
@@ -350,14 +344,13 @@ exports.updateUserDetails = asyncHandler(async (req, res, next) => {
 
         if (fileName) {
           updateData.avatarUrl = Const.URL_PREFIX_AVATAR + fileName;
+          updateData.avatarUrl = updateData.avatarUrl.split("public")[1].replace(/\\/g, '/');
         }
         // await oldUser.save();
       } catch (e) {
       }
     }
 
-
-    console.log(req.body);
     let userDetails = await UserSchema.findByIdAndUpdate(
       req.user.id,
       updateData,

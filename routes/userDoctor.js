@@ -13,7 +13,7 @@ const {
   cancelBooking,
   searchDoctorsByCategory,
   searchDoctors,
-  getDoctorById
+  getDriverById
 } = require('../Controllers/userDoctor');
 
 
@@ -21,7 +21,7 @@ const { registered } = require('../middleware/auth');
 const { uploadS3 } = require('../utils/aws');
 
 router.route('/:id')
-  .get(registered, getDoctorById);
+  .get(registered, getDriverById);
 
 router.route('/:id/hospital')
   .get(registered, getHospital);

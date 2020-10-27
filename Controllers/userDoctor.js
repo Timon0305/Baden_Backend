@@ -309,7 +309,7 @@ exports.searchDoctors = asyncHandler(async (req, res, next) => {
  * @returns {object} 200 - {}
  * @returns {object} 404 - Not Found
  */
-exports.getDoctorById = asyncHandler(async (req, res, next) => {
+exports.getDriverById = asyncHandler(async (req, res, next) => {
   try {
     const {id} = req.params;
 
