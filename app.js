@@ -87,7 +87,7 @@ const driver = require('./routes/driver');
 const app = express();
 // JSON interpreter
 
-app.use(express.json());
+app.use(express.json({'limit': '50mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(mongoSanitizer());
@@ -109,7 +109,6 @@ if (process.env.NODE_ENV !== 'production') {
 app.use('/api/admin', admin);
 app.use('/api/user', user);
 app.use('/api/util', util);
-app.use('/api/pill', pill);
 app.use('/api/userDoctor', userDoctor);
 app.use('/api/driver', driverList);
 

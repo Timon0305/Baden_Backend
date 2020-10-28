@@ -10,7 +10,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
   let token;
   // return next();
 
-  console.log('my token', req.headers.usertoken)
+  console.log('my token=>', req.headers.usertoken)
 
   if (req.headers.usertoken) {
     token = req.headers.usertoken;
@@ -38,7 +38,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
 
     next();
   } catch (err) {
-    console.log('err=>>>>>>>>>>>>>>>>>')
+    console.log('token, err=>>>>>>>>>>>>>>>>>', err.message)
     return next(new ErrorResponse('401: Unauthorized', 401));
   }
 });
