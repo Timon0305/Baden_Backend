@@ -33,6 +33,10 @@ const OfferSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    offerGeocoder : {
+        type: String,
+        required: true
+    },
     offerTime: {
         type: String,
         required: true

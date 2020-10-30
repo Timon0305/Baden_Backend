@@ -26,6 +26,7 @@ exports.getDriverById = asyncHandler(async (req, res, next) => {
         });
 
       const clientId = req.user._id;
+
       let offers = [];
 
       await Offer.find({clientId: clientId})
@@ -54,7 +55,7 @@ exports.getDriverById = asyncHandler(async (req, res, next) => {
 
 exports.sentOffer = asyncHandler(async (req, res, next) => {
     try {
-        let {vehicleId, offerLocation, offerTime} = req.body;
+        let {vehicleId, offerLocation, offerGeocoder, offerTime} = req.body;
         const clientId = req.user._id;
         const clientName = req.user.fullName;
 
@@ -69,6 +70,7 @@ exports.sentOffer = asyncHandler(async (req, res, next) => {
             clientId: clientId,
             vehicleId: vehicleId,
             offerLocation: offerLocation,
+            offerGeocoder: offerGeocoder,
             offerTime: offerTime,
         })
 

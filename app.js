@@ -79,7 +79,7 @@ const user = require('./routes/user');
 const admin = require('./routes/admin');
 const util = require('./routes/util');
 const pill = require('./routes/pill');
-const userDoctor = require('./routes/userDoctor');
+const offerList = require('./routes/clientOffer');
 const driverList = require('./routes/driverList');
 const driver = require('./routes/driver');
 
@@ -109,11 +109,11 @@ if (process.env.NODE_ENV !== 'production') {
 app.use('/api/admin', admin);
 app.use('/api/user', user);
 app.use('/api/util', util);
-app.use('/api/userDoctor', userDoctor);
 app.use('/api/driver', driverList);
 
 // Driver
 app.use('/api2/user', driver);
+app.use('/api2/driver', offerList)
 
 app.use(errorHandler);
 

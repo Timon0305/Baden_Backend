@@ -64,11 +64,11 @@ const DriverSchema = new mongoose.Schema({
     },
     licenseUrl: {
         type: String,
-        default: "/images/license/default_license.png"
+        default: " "
     },
     insuranceUrl: {
         type: String,
-        default: "/images/insurance/default_insurance.png"
+        default: " "
     },
     accountType: {
         type: String,

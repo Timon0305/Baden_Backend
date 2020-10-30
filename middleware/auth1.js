@@ -15,7 +15,7 @@ exports.registered = asyncHandler(async (req, res, next) => {
     } else if (req.cookies.userToken) {
         token = req.cookies.userToken;
     }
-    console.log('my stoken is', req.headers.usertoken)
+    console.log('my token is', req.headers.usertoken)
 
     if (!token) {
         return next(new ErrorResponse('401: Unauthorized', 401));
