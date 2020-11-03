@@ -1,6 +1,6 @@
 const UserSchema = require('../Models/User');
 const SessionSchema = require('../Models/Session');
-const ReviewSchema = require('../Models/Review');
+const VehicleSchema = require('../Models/Vehicle');
 const NotificationSchema = require('../Models/Notification');
 const UserNotificationSchema = require('../Models/UserNotification');
 const ErrorResponse = require('../utils/errorResponse');
@@ -273,41 +273,66 @@ exports.createDoctor = asyncHandler(async (req, res, next) => {
   }
 });
 
-exports.getReviews = asyncHandler(async (req, res, next) => {
+exports.getVehicle = asyncHandler(async (req, res, next) => {
   try {
-    const _reviews = await ReviewSchema.find();
-    let reviews = [];
-    for (let _review of _reviews) {
-      const doctor = await UserSchema.findById(_review.doctor);
-      const author = await UserSchema.findById(_review.author);
-      reviews.push({
-        id: _review.id,
-        doctor: doctor,
-        author: author,
-        rating: _review.rating,
-        description: _review.description,
-        createdAt: _review.createdAt,
-        updatedAt: _review.updatedAt
-      })
-    }
+    const vehicles = await VehicleSchema.find();
 
     res.status(200).json({
       success: true,
-      reviews
+      vehicles
     })
   } catch (e) {
-    console.log(tag, 'getReviews', e.message);
+    console.log(tag, 'get Vehicles', e.message);
     return next(e);
   }
 });
 
-exports.updateReview = asyncHandler(async (req, res, next) => {
+exports.createVehicle = asyncHandler(async (req, res, next) => {
+  const {
+    carUrl, fullName
+  } = req.body.newVehicle;
+  console.log(req.body.newVehicle)
+
+  try {
+    const registeredUser = await VehicleSchema.findOne({fullName});
+    if (registeredUser) {
+      return res.status(409).json({
+        success: false,
+        status_code: ErrorResponse.StatusCode.DUPLICATE_EMAIL,
+        error: 'Vehicle Name already exists'
+      })
+    }
+
+    const createVehicle = await VehicleSchema.create({
+     fullName
+    });
+
+    let newAvatar = null;
+    if (carUrl) {
+      newAvatar = await util.saveImageBase64(carUrl, Const.PATH_CAR, 'cars_' + createVehicle.id);
+      if (newAvatar) {
+        createVehicle.carUrl = Const.URL_PREFIX_CAR + newAvatar;
+      }
+    }
+
+    await createVehicle.save();
+
+    res.status(200).json({
+      success: true,
+    });
+  } catch (err) {
+    console.log(err.message);
+    return next(err);
+  }
+});
+
+exports.updateVehicle = asyncHandler(async (req, res, next) => {
   const {id} = req.params;
-  const {rating, description} = req.body;
+  const {newVehicle} = req.body;
 
-  let oldReview = await ReviewSchema.findById(id);
+  let oldVehicle = await VehicleSchema.findById(id);
 
-  if (!oldReview) {
+  if (!oldVehicle) {
     return res.status(408).json({
       success: false,
       status_code: ErrorResponse.StatusCode.ID_NOT_FOUND,
@@ -315,33 +340,48 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
     })
   }
 
-  oldReview.rating = rating;
-  oldReview.description = description;
+  // console.log(newUser.avatarUrl);
+  try {
+    const fileName = await util.saveImageBase64(newVehicle.carUrl, Const.PATH_CAR, 'cars_' + id);
+    if (fileName) {
+      oldVehicle.carUrl = Const.URL_PREFIX_CAR + fileName;
+      oldVehicle.carUrl = oldVehicle.carUrl.split("public")[1].replace(/\\/g, '/');
+    }
+    // await oldUser.save();
+  } catch (e) {
+  }
 
-  await oldReview.save();
+  oldVehicle.fullName = newVehicle.fullName;
+
+  await oldVehicle.save();
 
   return res.status(200).json({
     success: true,
   })
 });
 
-exports.deleteReview = asyncHandler(async (req, res, next) => {
+exports.deleteVehicle = asyncHandler(async (req, res, next) => {
   const {id} = req.params;
 
-  try {
-    let oldUser = await ReviewSchema.findById(id);
+  let oldVehicle = await VehicleSchema.findById(id);
 
-    if (oldUser) {
-      await oldUser.remove();
-    }
-
-    return res.status(200).json({
-      success: true,
+  if (!oldVehicle) {
+    return res.status(408).json({
+      success: false,
+      status_code: ErrorResponse.StatusCode.ID_NOT_FOUND,
+      error: 'ID doesn\'t exist',
     })
-  } catch (e) {
-    next(e);
   }
+
+  oldVehicle.status = 'DELETED';
+
+  await oldVehicle.save();
+
+  return res.status(200).json({
+    success: true,
+  })
 });
+
 
 
 

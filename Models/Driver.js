@@ -56,7 +56,7 @@ const DriverSchema = new mongoose.Schema({
     },
     carUrl: {
         type: String,
-        default: "/images/cars/default_car.png"
+        default: "/images/cars/default_cars.png"
     },
     carName: {
         type: String,
@@ -69,6 +69,14 @@ const DriverSchema = new mongoose.Schema({
     insuranceUrl: {
         type: String,
         default: " "
+    },
+    address: {
+        type: String,
+        default: ''
+    },
+    location: {
+        type: String,
+        default: ''
     },
     accountType: {
         type: String,

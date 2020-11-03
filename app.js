@@ -78,7 +78,6 @@ connectDB();
 const user = require('./routes/user');
 const admin = require('./routes/admin');
 const util = require('./routes/util');
-const pill = require('./routes/pill');
 const offerList = require('./routes/clientOffer');
 const driverList = require('./routes/driverList');
 const driver = require('./routes/driver');

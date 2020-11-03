@@ -1,5 +1,6 @@
 const Offer = require('../Models/Offer');
 const Driver = require('../Models/Driver');
+const Vehicle = require('../Models/Vehicle')
 
 const sendEmail = require('../utils/sendEmail');
 const asyncHandler = require('../middleware/async');
@@ -7,13 +8,33 @@ const ErrorResponse = require('../utils/errorResponse');
 
 const tag = 'Controllers::Offer';
 
+exports.getVehicleName = asyncHandler(async (req, res, next) => {
+    try {
+        let vehicles = [];
+        await Vehicle.find({status: 'ACTIVE'})
+            .then(dbVehicle => {
+                for (let item of dbVehicle) {
+                    let items = {}
+                    items.id = item._id;
+                    items.fullName = item.fullName;
+                    vehicles.push(items)
+                }
+            })
+
+        res.status(200).json({
+            vehicles
+        })
+    } catch (e) {
+        console.log('Get Vehicle Name Exception =>', e.message)
+    }
+})
+
 exports.getDriverById = asyncHandler(async (req, res, next) => {
   try {
     let vehicles = [];
 
     await Driver.find({status: 'ACTIVE'})
         .then(vehicle => {
-
            for(let item of vehicle) {
                let items = {}
                   items.id = item._id;
@@ -37,6 +58,7 @@ exports.getDriverById = asyncHandler(async (req, res, next) => {
                   items.vehicleId = item.vehicleId;
                   items.offerLocation = item.offerLocation;
                   items.offerTime = item.offerTime;
+                  items.offerPrice = item.offerPrice;
                   items.offerStatus = item.offerStatus;
                   items.createdAt = item.createdAt;
                   offers.push(items)

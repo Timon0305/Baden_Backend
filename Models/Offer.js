@@ -43,11 +43,12 @@ const OfferSchema = new mongoose.Schema({
     },
     offerPrice: {
         type: String,
+        default: 0
     },
     offerStatus: {
         type: String,
         default: 'Request',
-        enum: ['Request', 'Reject', 'Accept']
+        enum: ['Request','Response', 'Reject', 'Accept']
     },
     createdAt: {
         type: Date,

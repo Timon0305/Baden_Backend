@@ -7,12 +7,16 @@ const cors = require('cors');
 |----------------------------------------------------*/
 const {
   getDriverById,
-    sentOffer
+  sentOffer,
+  getVehicleName
 } = require('../Controllers/driverList');
 
 
 const { registered } = require('../middleware/auth');
 const { uploadS3 } = require('../utils/aws');
+
+router.route('/getVehicleName')
+  .get(registered, getVehicleName);
 
 router.route('/getDriverList')
   .get(registered, getDriverById);

@@ -6,14 +6,17 @@ const cors = require('cors');
 |   Import pillReminder Control Methods
 |----------------------------------------------------*/
 const {
-  getHospital,
+  getOfferById,
+  setOfferPrice,
+  getVehicleName,
+
   getReviews,
   createReview,
   requestBooking,
   cancelBooking,
   searchDoctorsByCategory,
   searchDoctors,
-  getOfferById
+
 } = require('../Controllers/offerList');
 
 
@@ -23,8 +26,12 @@ const { uploadS3 } = require('../utils/aws');
 router.route('/getOfferList')
   .get(registered, getOfferById);
 
-router.route('/:id/hospital')
-  .get(registered, getHospital);
+router.route('/sentOffer')
+    .post(registered, setOfferPrice)
+
+
+router.route('/vehicleName')
+  .get(registered, getVehicleName);
 
 router.route('/:id/review')
   .get(registered, getReviews)

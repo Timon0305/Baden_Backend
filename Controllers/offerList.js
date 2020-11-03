@@ -1,5 +1,6 @@
 const Driver = require('../Models/Driver');
 const Offer = require('../Models/Offer');
+const Vehicle = require('../Models/Vehicle');
 
 const sendEmail = require('../utils/sendEmail');
 const asyncHandler = require('../middleware/async');
@@ -12,20 +13,23 @@ const tag = 'Controllers::OfferDoctor';
  * @param {string} id.params.required
  * @returns {object} 200 - {}
  */
-exports.getHospital = asyncHandler(async (req, res, next) => {
+exports.getVehicleName = asyncHandler(async (req, res, next) => {
   try {
-    const {id} = req.params;
-    if (!id) {
-      return next(new ErrorResponse('OfferId is required', 400))
-    }
-
-    const offer = await Offer.findById(id);
-    if (!offer) {
-      return next(new ErrorResponse('Doctor doesn\'t exist', 404))
-    }
-    console.log('my offer =>', offer)
-
+    let vehicles = [];
+    await Vehicle.find({status: 'ACTIVE'})
+        .then(dbVehicle => {
+          for (let item of dbVehicle) {
+            let items = {}
+            items.id = item._id;
+            items.fullName = item.fullName;
+            vehicles.push(items)
+          }
+        })
+    res.status(200).json({
+      vehicles
+    })
   } catch (e) {
+    console.log('Get Vehicle Name Exception =>', e.message);
     next(e)
   }
 });
@@ -321,6 +325,7 @@ exports.getOfferById = asyncHandler(async (req, res, next) => {
         items.offerLocation = item.offerLocation;
         items.offerGeocoder = item.offerGeocoder;
         items.offerTime = item.offerTime;
+        items.offerPrice = item.offerPrice;
         items.offerStatus = item.offerStatus;
         offers.push(items)
     }
@@ -334,3 +339,42 @@ exports.getOfferById = asyncHandler(async (req, res, next) => {
     next(e)
   }
 });
+
+exports.setOfferPrice = asyncHandler(async (req, res, next) => {
+  try {
+    const {id} = req.user;
+    if (!id) {
+      return res.json(400).json({
+        success: false,
+        error: 'Id is required'
+      })
+    }
+    const {offerId, offerPrice} = req.body;
+
+    const dbOfferOne = await Offer.findOne({clientId: offerId, vehicleId: id})
+    dbOfferOne.offerPrice = offerPrice;
+    dbOfferOne.offerStatus = 'Response';
+    await dbOfferOne.save();
+
+    const dbOffer = await Offer.find({vehicleId: id});
+    let offers = [];
+    for (let item of dbOffer) {
+      let items = {}
+      items.clientName = item.clientName;
+      items.clientId = item.clientId;
+      items.offerLocation = item.offerLocation;
+      items.offerGeocoder = item.offerGeocoder;
+      items.offerTime = item.offerTime;
+      items.offerPrice = item.offerPrice;
+      items.offerStatus = item.offerStatus;
+      offers.push(items)
+    }
+    console.log(offers)
+    res.status(200).json({
+      offers
+    })
+  } catch (err) {
+    console.log('Sent Offer Price Exception =>', err.message);
+    next(err)
+  }
+})

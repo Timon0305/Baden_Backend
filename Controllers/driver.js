@@ -362,6 +362,29 @@ exports.updateUserDetails = asyncHandler(async (req, res, next) => {
     }
 });
 
+exports.addLocation = asyncHandler(async (req, res, next) => {
+    let {id} = req.user;
+    const location = req.body.location.latitude + ',' + req.body.location.longitude
+    const address= req.body.address;
+    let updateData = {
+        location, address
+    };
+
+    let userDetails = await DriverSchema.findByIdAndUpdate(
+        id,
+        updateData,
+        {
+            new: true,
+            runValidators: true
+        }
+    );
+    await userDetails.save();
+
+    res.status(200).json({
+        userDetails
+    })
+})
+
 /**
  * @description     Deactivate User Account
  * @route           DELETE /user

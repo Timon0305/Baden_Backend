@@ -10,6 +10,7 @@ const {
     registerUser,
     verifyEmail,
     getUserDetails,
+    addLocation,
     deleteUser,
     forgetPassword,
     resendVerificationEmail,
@@ -40,6 +41,9 @@ router
     .get(registered, getUserDetails)
     .post(registered, updateUserDetails);
 
+router
+    .route('/location')
+    .post(registered, addLocation);
 //----------------------------------------------------------
 // @endpoint    POST /user/register
 router.route('/register').post(registerUser);

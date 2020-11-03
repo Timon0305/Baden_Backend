@@ -9,11 +9,10 @@ const {
   createUser,
   updateUser,
   deleteUser,
-  createDoctor,
-  getDoctors,
-  getReviews,
-  updateReview,
-  deleteReview,
+  getVehicle,
+  createVehicle,
+  updateVehicle,
+  deleteVehicle
 } = require('../Controllers/admin');
 
 const { registered } = require('../middleware/auth');
@@ -39,24 +38,15 @@ router
   .delete(registered, deleteUser);
 
 router
-  .route('/doctors')
-  .get(registered, getDoctors)
-  .put(registered, createDoctor);
+  .route('/vehicles')
+  .get(registered, getVehicle)
+  .put(registered, createVehicle);
 
 router
-  .route('/doctors/:id')
-  .post(registered, updateUser)
-  .delete(registered, deleteUser);
+  .route('/vehicles/:id')
+  .post(registered, updateVehicle)
+  .delete(registered, deleteVehicle);
 
-router
-  .route('/reviews')
-  .get(registered, getReviews);
-  // .put(registered, createDoctor);
-
-router
-  .route('/review/:id')
-  .post(registered, updateReview)
-  .delete(registered, deleteReview);
 
 module.exports = router;
 
