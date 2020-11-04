@@ -41,6 +41,10 @@ const OfferSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    spendingTime: {
+        type: String,
+        required: true
+    },
     offerPrice: {
         type: String,
         default: 0

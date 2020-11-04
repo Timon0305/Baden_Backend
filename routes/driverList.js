@@ -19,7 +19,7 @@ router.route('/getVehicleName')
   .get(registered, getVehicleName);
 
 router.route('/getDriverList')
-  .get(registered, getDriverById);
+  .post(registered, getDriverById);
 
 router.route('/offerSent')
     .post(registered, sentOffer)

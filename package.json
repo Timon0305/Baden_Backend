@@ -26,6 +26,7 @@
     "express-swagger-generator": "^1.1.17",
     "fcm-node": "^1.5.2",
     "firebase": "^7.15.5",
+    "google-distance-matrix": "^1.1.1",
     "helmet": "^3.23.0",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
