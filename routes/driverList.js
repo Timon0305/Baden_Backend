@@ -8,7 +8,9 @@ const cors = require('cors');
 const {
   getDriverById,
   sentOffer,
-  getVehicleName
+  getVehicleName,
+  offerAccept,
+    getAllOffer
 } = require('../Controllers/driverList');
 
 
@@ -24,4 +26,9 @@ router.route('/getDriverList')
 router.route('/offerSent')
     .post(registered, sentOffer)
 
+router.route('/getAllOffer')
+    .post(registered, getAllOffer)
+
+router.route('/offerAccept')
+    .post(registered, offerAccept)
 module.exports = router;

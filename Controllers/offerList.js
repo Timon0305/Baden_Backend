@@ -325,11 +325,10 @@ exports.getOfferById = asyncHandler(async (req, res, next) => {
         items.offerLocation = item.offerLocation;
         items.offerGeocoder = item.offerGeocoder;
         items.offerTime = item.offerTime;
-        items.offerPrice = item.offerPrice;
+        items.spendingTime = item.spendingTime;
         items.offerStatus = item.offerStatus;
         offers.push(items)
     }
-
     res.status(200).json({
       offers
     })
@@ -366,10 +365,10 @@ exports.setOfferPrice = asyncHandler(async (req, res, next) => {
       items.offerGeocoder = item.offerGeocoder;
       items.offerTime = item.offerTime;
       items.offerPrice = item.offerPrice;
+      items.spendingTime = item.spendingTime;
       items.offerStatus = item.offerStatus;
       offers.push(items)
     }
-    console.log(offers)
     res.status(200).json({
       offers
     })

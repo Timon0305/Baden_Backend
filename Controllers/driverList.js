@@ -43,9 +43,10 @@ exports.getVehicleName = asyncHandler(async (req, res, next) => {
 
 exports.getDriverById = asyncHandler(async (req, res, next) => {
   let {vehicleId, geoCoder} = req.body;
+    const clientId = req.user._id;
   const origins = [geoCoder.split(',')[0] + ',' + geoCoder.split(',')[1]];
   const mode = 'DRIVING';
-  console.log(vehicleId, geoCoder)
+  console.log(vehicleId, geoCoder, clientId)
     try {
         const dbVehicleName = await Vehicle.findOne({_id: vehicleId})
         let vehicles = [];
@@ -73,8 +74,25 @@ exports.getDriverById = asyncHandler(async (req, res, next) => {
         vehicles.sort((a, b) => {
             return parseInt(a.distance) - parseInt(b.distance)
         });
+
+        let offers = [];
+        await Offer.find({clientId: clientId})
+            .then(myOffer => {
+                for (let item of myOffer) {
+                    let items = {};
+                    items.clientId = item.clientId;
+                    items.vehicleId = item.vehicleId;
+                    items.offerLocation = item.offerLocation;
+                    items.offerTime = item.offerTime;
+                    items.offerStatus = item.offerStatus;
+                    items.offerPrice = item.offerPrice;
+                    offers.push(items)
+                }
+            });
+
         res.status(200).json({
-            vehicles
+            vehicles,
+            offers
         });
   } catch (e) {
     console.log(tag, 'fetchDoctorById', e.message);
@@ -142,7 +160,7 @@ exports.sentOffer = asyncHandler(async (req, res, next) => {
                     items.offerLocation = item.offerLocation;
                     items.offerTime = item.offerTime;
                     items.offerStatus = item.offerStatus;
-                    items.createdAt = item.createdAt;
+                    items.offerPrice = item.offerPrice;
                     offers.push(items)
                 }
             })
@@ -154,3 +172,80 @@ exports.sentOffer = asyncHandler(async (req, res, next) => {
         next(e)
     }
 });
+
+exports.offerAccept = asyncHandler(async (req, res, next) => {
+    let clientId = req.user._id;
+    let {vehicleId} = req.body;
+    try {
+        const dbOffer = await Offer.findOne({clientId: clientId, vehicleId: vehicleId})
+        dbOffer.offerStatus = "Accept";
+        await dbOffer.save();
+
+        let offers = [];
+
+        await Offer.find({clientId: clientId})
+            .then(myOffer => {
+                for (let item of myOffer) {
+                    let items = {};
+                    items.clientId = item.clientId;
+                    items.vehicleId = item.vehicleId;
+                    items.offerLocation = item.offerLocation;
+                    items.offerTime = item.offerTime;
+                    items.offerStatus = item.offerStatus;
+                    items.offerPrice = item.offerPrice;
+                    offers.push(items)
+                }
+            })
+        res.status(200).json({
+            offers
+        })
+    } catch (e) {
+        console.log(e.message);
+        next(e)
+    }
+})
+
+exports.getAllOffer = asyncHandler(async (req, res, next) => {
+    let clientId = req.user._id;
+    let clientName = req.user.fullName;
+    let {vehicleId, offerLocation, offerGeocoder, offerTime, spendingTime} = req.body;
+    try {
+        console.log(vehicleId)
+        const dbDriver = await Driver.find({carName: vehicleId})
+        for (let item of dbDriver) {
+            const vehicleId = item._id;
+            const offer =  await Offer.create({
+                clientName: clientName,
+                clientId: clientId,
+                vehicleId: vehicleId,
+                offerLocation: offerLocation,
+                offerGeocoder: offerGeocoder,
+                spendingTime: spendingTime,
+                offerTime: offerTime,
+            })
+
+            await offer.save();
+        }
+
+        let offers = [];
+
+        await Offer.find({clientId: clientId})
+            .then(myOffer => {
+                for (let item of myOffer) {
+                    let items = {};
+                    items.clientId = item.clientId;
+                    items.vehicleId = item.vehicleId;
+                    items.offerLocation = item.offerLocation;
+                    items.offerTime = item.offerTime;
+                    items.offerStatus = item.offerStatus;
+                    items.offerPrice = item.offerPrice;
+                    offers.push(items)
+                }
+            })
+        res.status(200).json({
+            offers
+        })
+    } catch (e) {
+        console.log('get all offer exception =>', e.message)
+    }
+})
